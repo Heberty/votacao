@@ -10,3 +10,5 @@
         </div>
     </div>
 </header>
+
+@include('layouts.partials._admin_access')

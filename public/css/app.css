@@ -11007,6 +11007,22 @@ header .logo img {
   width: 150px;
 }
 
+.admin-access {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 10;
+  padding: 10px;
+  background-image: linear-gradient(#FF0068, #9C27B0);
+  border-radius: 50%;
+  box-shadow: 6px 3px rgba(0, 0, 0, 0.15);
+}
+
+.admin-access i {
+  font-size: 18px;
+  color: #fff;
+}
+
 .section-votes .box-votes {
   padding: 15px;
   display: flex;
