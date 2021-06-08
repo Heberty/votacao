@@ -1,0 +1,15 @@
+// bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+
+// communs
+@import 'communs/variables';
+@import 'communs/fonts';
+@import 'communs/text';
+@import 'communs/communs';
+
+// blocks
+@import 'blocks/header';
+
+// sections
+@import 'sections/section_votes';
