@@ -17,30 +17,18 @@
                                 <input type="text" class="form-control" placeholder="E-mail" name="email">
                             </div>
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mr-1">
-                                    <input id="opcao-01" type="radio" value="opcao-01" name="vote">
+                        @forelse($votes as $vote)
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mr-1">
+                                        <input id="{{ Str::slug($vote->title) }}" type="radio" value="{{ Str::slug($vote->title) }}" name="vote">
+                                    </div>
                                 </div>
+                                <label for="{{ Str::slug($vote->title) }}" class="form-label">{{ $vote->title }}</label>
                             </div>
-                            <label for="opcao-01" class="form-label">Opção 01</label>
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mr-1">
-                                    <input id="opcao-02" type="radio" value="opcao-02" name="vote">
-                                </div>
-                            </div>
-                            <label for="opcao-02" class="form-label">Opção 02</label>
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mr-1">
-                                    <input id="opcao-03" type="radio" value="opcao-03" name="vote">
-                                </div>
-                            </div>
-                            <label for="opcao-03" class="form-label">Opção 03</label>
-                        </div>
+                        @empty
+                            <p>Nenhuma opção cadastrada</p>
+                        @endforelse
                         <div class="btn btn-success w-100 text-white"><i class="fas fa-check"></i> votar</div>
                     </div>
                 </div>
