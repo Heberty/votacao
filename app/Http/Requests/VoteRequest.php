@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Str;
 
 class VoteRequest extends FormRequest
 {
@@ -19,6 +20,7 @@ class VoteRequest extends FormRequest
     public function prepareForValidation() {
         $this->merge([
             'active' => $this->active ? true : false,
+            'slug' => Str::slug($this->title)
         ]);
         
     }

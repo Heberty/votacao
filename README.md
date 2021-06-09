@@ -14,7 +14,3 @@
 * Login: contato@mixinternet.com.br
 * Senha: 1q2w3e4r
 
-
-##### Observações
-
-* Não foi concluido o processo de votação, se for possível precisarei de mais tempo para a conclusão.

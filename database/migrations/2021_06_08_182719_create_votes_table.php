@@ -17,6 +17,8 @@ class CreateVotesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->boolean('active');
+            $table->string('slug');
+            $table->integer('qtd')->default(0);
             $table->timestamps();
         });
     }

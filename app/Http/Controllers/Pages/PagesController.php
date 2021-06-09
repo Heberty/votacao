@@ -21,8 +21,10 @@ class PagesController extends Controller
     {
         try {
             $count = new Count($request->all());
-
             $count->save();
+            $opcao = Vote::find($request->vote_id);
+            $opcao->qtd++;
+            $opcao->save();
 
             return redirect()->route('pages.index')->with('success', 'Voto computado com sucesso!');
         } catch(\Exception $e) {

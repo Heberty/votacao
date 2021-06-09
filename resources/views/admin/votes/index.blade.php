@@ -27,7 +27,7 @@
                     <th scope="row">{{ $vote->id }}</th>
                     <td>{{ $vote->active ? 'Sim' : 'Não' }}</td>
                     <td>{{ $vote->title }}</td>
-                    <td>{{ count($counts) }}</td>
+                    <td>{{ $vote->qtd }}</td>
                     <td class="d-inline-flex">
                         <a href="{{ route('admin.votes.edit', $vote)}}" class="btn btn-warning text-light mr-2"><i class="far fa-edit"></i></a>
                         <form method="POST" action="{{ route('admin.votes.destroy', $vote) }}">

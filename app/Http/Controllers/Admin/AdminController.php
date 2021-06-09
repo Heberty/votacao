@@ -12,8 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $votes = Vote::get();
-        $counts = Count::get();
 
-        return view('admin.index', compact('votes', 'counts'));
+        return view('admin.index', compact('votes'));
     }
 }
