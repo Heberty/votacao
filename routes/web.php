@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Pages\PagesController@index')->name('index');
+Route::get('/', 'Pages\PagesController@index')->name('pages.index');
+Route::post('vote', 'Pages\PagesController@vote')->name('pages.vote');
 
 Auth::routes(['register' => false]);
 

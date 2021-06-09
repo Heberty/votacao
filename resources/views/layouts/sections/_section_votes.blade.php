@@ -1,6 +1,7 @@
 <section class="section-votes" id="votos">
     <div class="container">
-        <form action="" method="post" class="form-site">
+        <form action="{{ route('pages.vote') }}" method="post" class="form-site">
+            @csrf
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <div class="box-votes left">
@@ -18,18 +19,20 @@
                             </div>
                         </div>
                         @forelse($votes as $vote)
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text mr-1">
-                                        <input id="{{ Str::slug($vote->title) }}" type="radio" value="{{ Str::slug($vote->title) }}" name="vote">
+                            @if($vote->active)
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mr-1">
+                                            <input id="{{ Str::slug($vote->title) }}" type="radio" value="{{ $vote->id }}" name="vote_id">
+                                        </div>
                                     </div>
+                                    <label for="{{ Str::slug($vote->title) }}" class="form-label">{{ $vote->title }}</label>
                                 </div>
-                                <label for="{{ Str::slug($vote->title) }}" class="form-label">{{ $vote->title }}</label>
-                            </div>
+                            @endif
                         @empty
                             <p>Nenhuma opção cadastrada</p>
                         @endforelse
-                        <div class="btn btn-success w-100 text-white"><i class="fas fa-check"></i> votar</div>
+                        <button class="btn btn-success w-100 text-white"><i class="fas fa-check"></i> votar</button>
                     </div>
                 </div>
             </div>

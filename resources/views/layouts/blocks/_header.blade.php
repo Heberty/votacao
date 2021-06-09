@@ -12,3 +12,4 @@
 </header>
 
 @include('layouts.partials._admin_access')
+@include('layouts.blocks._messages')

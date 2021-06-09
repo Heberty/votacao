@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Vote;
+use App\Models\Count;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoteRequest;
 
@@ -12,8 +13,9 @@ class VotesController extends Controller
     public function index()
     {
         $votes = Vote::paginate(10);
+        $counts = Count::get();
 
-        return view('admin.votes.index', compact('votes'));
+        return view('admin.votes.index', compact('votes', 'counts'));
     }
 
     public function create()
